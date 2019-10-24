@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.57.1 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="葛飞">
+<meta name="keywords" content="tech">
+<meta name="description" content="html常用的一些标签">
+
+
+<meta property="og:description" content="html常用的一些标签">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML常用标签">
+<meta name="twitter:title" content="HTML常用标签">
+<meta property="og:url" content="https://gefei-someone.github.io/2019/08/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/">
+<meta property="twitter:url" content="https://gefei-someone.github.io/2019/08/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/">
+<meta property="og:site_name" content="葛飞的博客">
+<meta property="og:description" content="html常用的一些标签">
+<meta name="twitter:description" content="html常用的一些标签">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-08-28T15:53:49">
+  
+  
+    <meta property="article:modified_time" content="2019-08-28T15:53:49">
+  
+  
+  
+    
+      <meta property="article:section" content="html">
+    
+  
+  
+    
+      <meta property="article:tag" content="html">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/2f7c05864e0be8750bb57a1449bc059d?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/2f7c05864e0be8750bb57a1449bc059d?s=640">
+
+
+    <title>HTML常用标签</title>
+
+    <link rel="icon" href="https://gefei-someone.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://gefei-someone.github.io/2019/08/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://gefei-someone.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://gefei-someone.github.io/">葛飞的博客</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://gefei-someone.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/2f7c05864e0be8750bb57a1449bc059d?s=90" alt="作者的图片" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://gefei-someone.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/2f7c05864e0be8750bb57a1449bc059d?s=110" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">葛飞</h4>
+        
+          <h5 class="sidebar-profile-bio">小程序员一枚</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://gefei-someone.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://gefei-someone.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/GeFei-someone" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://gefei-someone.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      HTML常用标签
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-08-28T15:53:49&#43;08:00">
+        
+  八月 28, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://gefei-someone.github.io/categories/html">html</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>html常用的一些标签</p>
+
+<p>目录</p>
+
+<ol>
+<li><a href="#a">a标签</a></li>
+<li><a href="#img">img标签</a></li>
+<li><a href="#form">form标签</a></li>
+<li><a href="#input">input标签</a></li>
+<li><a href="#table">table标签</a></li>
+</ol>
+
+<h2 id="div-id-a-一-a标签-div"><div id='a'>一、a标签</div></h2>
+
+<blockquote>
+<p>属性</p>
+</blockquote>
+
+<ul>
+<li>href</li>
+<li>target</li>
+<li>download</li>
+<li>rel=noopener</li>
+</ul>
+
+<p>href取值</p>
+
+<ul>
+<li><p>网站：</p>
+
+<pre><code>https://baidu.com
+
+http://baidu.com
+
+//baidu.com  无协议网址，会自动适用http还是https
+</code></pre></li>
+</ul>
+
+<p><img src="https://i.loli.net/2019/08/28/aTQsH7Y8qrj5CdZ.png" alt="" /></p>
+
+<ul>
+<li><p>路径</p>
+
+<pre><code>/a/b/c // 绝对路径
+
+a/b/c // 相对路径
+</code></pre></li>
+
+<li><p>伪协议</p>
+
+<pre><code>javascript: ;  //一般用于直接执行js代码，现在用于点击无动作的a标签 : ; 中间是js代码
+
+mailto: 邮箱
+
+tel: 手机号 // 在手机里会自动跳进打电话界面，填充你点击的手机号
+</code></pre></li>
+
+<li><p>id</p>
+
+<pre><code>href=&quot;#xxx&quot;  //锚点链接
+</code></pre></li>
+</ul>
+
+<p>target取值</p>
+
+<ul>
+<li><p>_blank</p>
+
+<p>新窗口打开</p></li>
+
+<li><p>_top</p>
+
+<p>最顶层打开,一般在iframe里使用,不管有多少个iframe 都会在最顶层打开</p>
+
+<p><img src="https://i.loli.net/2019/08/28/c8QV3tBSdDsfK9z.png" alt="" /></p>
+
+<p><img src="https://i.loli.net/2019/08/28/OtyTNJmKuH2eFpE.png" alt="" /></p></li>
+
+<li><p>_parent</p>
+
+<p>当前窗口的上一级窗口打开，一般在iframe里使用</p>
+
+<p><img src="https://i.loli.net/2019/08/28/8XIoldup4qS2E3G.png" alt="" /></p>
+
+<p><img src="https://i.loli.net/2019/08/28/5G7PcK3D9Ej46LU.png" alt="" /></p>
+
+<p><img src="https://i.loli.net/2019/08/28/UC9lngpmKIF8qTO.png" alt="" /></p></li>
+
+<li><p>_self</p>
+
+<p>当前窗口打开</p></li>
+
+<li><p>xxx</p>
+
+<p>如果有一个叫xxx的窗口就在xxx打开，如果没有就创建xxx窗口，
+如何验证窗口是xxx   控制台输入  window.name,</p>
+
+<p><img src="https://i.loli.net/2019/08/28/ihHGmUbo7gQ3P2B.png" alt="" /></p>
+
+<p><img src="https://i.loli.net/2019/08/28/NXhjvJP513lTQ8F.png" alt="" /></p></li>
+
+<li><p>iframe的name</p>
+
+<p>实现在iframe里打开新页面</p>
+
+<p><img src="https://i.loli.net/2019/08/28/5Iuq8gj1QrCZdHe.png" alt="" /></p>
+
+<p><img src="https://i.loli.net/2019/08/28/ZAdcW6vCtpx1TYB.png" alt="" /></p></li>
+</ul>
+
+<h2 id="div-id-img-二-img标签-div"><div id='img'>二、img标签</div></h2>
+
+<blockquote>
+<p>作用</p>
+</blockquote>
+
+<pre><code>发出get请求，展示一张图片
+</code></pre>
+
+<blockquote>
+<p>属性</p>
+</blockquote>
+
+<ul>
+<li><p>alt</p>
+
+<p>图片加载失败显示的提示</p>
+
+<p><img src="https://i.loli.net/2019/08/28/Sdx5JQ7nqMK4gN3.png" alt="" /></p></li>
+
+<li><p>height</p>
+
+<p>高度  只写高度 宽度会自适应</p></li>
+
+<li><p>width</p>
+
+<p>宽度 只写宽度 高度会自适应</p></li>
+
+<li><p>src</p>
+
+<p>路径</p></li>
+</ul>
+
+<blockquote>
+<p>事件</p>
+</blockquote>
+
+<pre><code>onload: 图片加载成功触发
+
+onerror: 图片加载失败触发
+</code></pre>
+
+<blockquote>
+<p>响应式</p>
+</blockquote>
+
+<pre><code class="language-js">max-width: 100%;
+</code></pre>
+
+<h2 id="div-id-form-三-form标签-div"><div id='form'>三、form标签</div></h2>
+
+<blockquote>
+<p>作用</p>
+</blockquote>
+
+<p>发get或post请求，然后刷新页面</p>
+
+<blockquote>
+<p>属性</p>
+</blockquote>
+
+<ul>
+<li><p>action</p>
+
+<p>请求地址</p></li>
+
+<li><p>autocomplete</p>
+
+<p>是否自动填充  使用这个需要在input里写name属性</p></li>
+
+<li><p>method</p>
+
+<p>设置请求方式，get或post 大小写无所谓</p></li>
+
+<li><p>target</p>
+
+<p>和 a标签的一样</p></li>
+</ul>
+
+<blockquote>
+<p>事件</p>
+</blockquote>
+
+<pre><code>onsubmit：当用户点提交的时候，触发事件
+</code></pre>
+
+<p><font color=red size=2>注：在表单里，如果button里不设置type默认会是submit属性</font></p>
+
+<h2 id="div-id-input-四-input标签-div"><div id='input'>四、input标签</div></h2>
+
+<blockquote>
+<p>作用</p>
+</blockquote>
+
+<p>让用户输入内容</p>
+
+<blockquote>
+<p>属性</p>
+</blockquote>
+
+<ul>
+<li><p>type</p>
+
+<pre><code class="language-js">button
+checkbox
+redio
+email
+file  //多选上传属性 multiple
+hidden
+number
+password
+search
+submit
+tel
+text
+color
+</code></pre></li>
+
+<li><p>name</p></li>
+
+<li><p>autofocus</p></li>
+
+<li><p>checked</p></li>
+
+<li><p>disabled</p></li>
+
+<li><p>maxlength</p></li>
+
+<li><p>minlength</p></li>
+
+<li><p>pattern</p></li>
+
+<li><p>value</p></li>
+
+<li><p>placeholder</p></li>
+</ul>
+
+<blockquote>
+<p>事件</p>
+</blockquote>
+
+<pre><code>    onchange 用户输入改变时
+    onfocus 获取焦点时
+    onblur 失去焦点时
+</code></pre>
+
+<blockquote>
+<p>验证器</p>
+</blockquote>
+
+<pre><code>required 必须填写 html5新增
+</code></pre>
+
+<blockquote>
+<p>textarea标签</p>
+</blockquote>
+
+<pre><code>resize: none 禁止拖动 css设置
+</code></pre>
+
+<blockquote>
+<p>select 标签</p>
+</blockquote>
+
+<pre><code>&lt;select&gt;
+    &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;  // value是真正的值，里面的是给用户看到的
+&lt;/select&gt;
+</code></pre>
+
+<p>注意事项：</p>
+
+<pre><code>一般不监听input的click事件
+
+form里面的input要有name属性
+
+form里放一个type=submit才能触发submit事件
+</code></pre>
+
+<h2 id="div-id-table-五-table标签-div"><div id='table'>五、table标签</div></h2>
+
+<p>table标签里只能有3个标签</p>
+
+<pre><code>thead  头部
+
+tbody 主体
+
+tfoot   脚步
+</code></pre>
+
+<p>tr :  行</p>
+
+<p>th: 表头</p>
+
+<p>td: 数据 列</p>
+
+<blockquote>
+<p>相关样式</p>
+</blockquote>
+
+<pre><code class="language-css">table {
+    border-collapse: collapse;  // 表格的边框是分开还是合并 collapse合并
+    border-spacing: 0  // 相邻单元格边框之间的距离 
+}
+</code></pre>
+
+<h2 id="其他感想">其他感想</h2>
+
+<p>之前写表单的时候一直都不写<code>from</code>，导致内容老是自己填充，最后使用<code>hidden</code>属性隐藏<code>input</code>骗浏览器，现在知道了 <code>autocomplete</code> 属性了，还是挺有用的，感谢</p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://gefei-someone.github.io/tags/html/">html</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://gefei-someone.github.io/2019/09/%E6%B5%85%E6%9E%90url/" data-tooltip="浅析URL">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://gefei-someone.github.io/2019/08/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/" data-tooltip="HTML入门笔记1">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://gefei-someone.github.io/2019/08/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://gefei-someone.github.io/2019/08/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://gefei-someone.github.io/2019/08/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2019 葛飞. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://gefei-someone.github.io/2019/09/%E6%B5%85%E6%9E%90url/" data-tooltip="浅析URL">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://gefei-someone.github.io/2019/08/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/" data-tooltip="HTML入门笔记1">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://gefei-someone.github.io/2019/08/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://gefei-someone.github.io/2019/08/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://gefei-someone.github.io/2019/08/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgefei-someone.github.io%2F2019%2F08%2Fhtml%25E5%25B8%25B8%25E7%2594%25A8%25E6%25A0%2587%25E7%25AD%25BE%2F">
+          <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fgefei-someone.github.io%2F2019%2F08%2Fhtml%25E5%25B8%25B8%25E7%2594%25A8%25E6%25A0%2587%25E7%25AD%25BE%2F">
+          <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fgefei-someone.github.io%2F2019%2F08%2Fhtml%25E5%25B8%25B8%25E7%2594%25A8%25E6%25A0%2587%25E7%25AD%25BE%2F">
+          <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/2f7c05864e0be8750bb57a1449bc059d?s=110" alt="作者的图片" />
+    
+    <h4 id="about-card-name">葛飞</h4>
+    
+      <div id="about-card-bio">小程序员一枚</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        前端开发工程师
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        北京
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://gefei-someone.github.io/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://gefei-someone.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/gefei-someone.github.io\/2019\/08\/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE\/';
+          
+            this.page.identifier = '\/2019\/08\/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

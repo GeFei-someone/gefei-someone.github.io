@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on 葛飞的博客</title>
+    <link>https://gefei-someone.github.io/categories/</link>
+    <description>Recent content in Categories on 葛飞的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 23 Oct 2019 10:39:20 +0800</lastBuildDate>
+    
+	<atom:link href="https://gefei-someone.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>javascript</title>
+      <link>https://gefei-someone.github.io/categories/javascript/</link>
+      <pubDate>Wed, 23 Oct 2019 10:39:20 +0800</pubDate>
+      
+      <guid>https://gefei-someone.github.io/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>category</title>
+      <link>https://gefei-someone.github.io/categories/category/</link>
+      <pubDate>Tue, 08 Oct 2019 16:38:19 +0800</pubDate>
+      
+      <guid>https://gefei-someone.github.io/categories/category/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>subcategory</title>
+      <link>https://gefei-someone.github.io/categories/subcategory/</link>
+      <pubDate>Tue, 08 Oct 2019 16:38:19 +0800</pubDate>
+      
+      <guid>https://gefei-someone.github.io/categories/subcategory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>css</title>
+      <link>https://gefei-someone.github.io/categories/css/</link>
+      <pubDate>Tue, 10 Sep 2019 17:09:19 +0800</pubDate>
+      
+      <guid>https://gefei-someone.github.io/categories/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>浏览器</title>
+      <link>https://gefei-someone.github.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/</link>
+      <pubDate>Tue, 10 Sep 2019 17:09:19 +0800</pubDate>
+      
+      <guid>https://gefei-someone.github.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HTTP</title>
+      <link>https://gefei-someone.github.io/categories/http/</link>
+      <pubDate>Wed, 04 Sep 2019 17:28:30 +0800</pubDate>
+      
+      <guid>https://gefei-someone.github.io/categories/http/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>url</title>
+      <link>https://gefei-someone.github.io/categories/url/</link>
+      <pubDate>Wed, 04 Sep 2019 17:28:30 +0800</pubDate>
+      
+      <guid>https://gefei-someone.github.io/categories/url/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>html</title>
+      <link>https://gefei-someone.github.io/categories/html/</link>
+      <pubDate>Wed, 28 Aug 2019 15:53:49 +0800</pubDate>
+      
+      <guid>https://gefei-someone.github.io/categories/html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>html5</title>
+      <link>https://gefei-someone.github.io/categories/html5/</link>
+      <pubDate>Mon, 26 Aug 2019 14:38:32 +0800</pubDate>
+      
+      <guid>https://gefei-someone.github.io/categories/html5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>node</title>
+      <link>https://gefei-someone.github.io/categories/node/</link>
+      <pubDate>Mon, 26 Aug 2019 10:03:54 +0800</pubDate>
+      
+      <guid>https://gefei-someone.github.io/categories/node/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://gefei-someone.github.io/categories/git/</link>
+      <pubDate>Mon, 19 Aug 2019 22:03:20 +0800</pubDate>
+      
+      <guid>https://gefei-someone.github.io/categories/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>https://gefei-someone.github.io/categories/github/</link>
+      <pubDate>Mon, 19 Aug 2019 22:03:20 +0800</pubDate>
+      
+      <guid>https://gefei-someone.github.io/categories/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://gefei-someone.github.io/categories/hugo/</link>
+      <pubDate>Mon, 19 Aug 2019 22:03:20 +0800</pubDate>
+      
+      <guid>https://gefei-someone.github.io/categories/hugo/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.57.1 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="葛飞">
+<meta name="keywords" content="javascript">
+<meta name="description" content="js对象基础">
+
+
+<meta property="og:description" content="js对象基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Js对象">
+<meta name="twitter:title" content="Js对象">
+<meta property="og:url" content="https://gefei-someone.github.io/2019/10/js%E5%AF%B9%E8%B1%A1/">
+<meta property="twitter:url" content="https://gefei-someone.github.io/2019/10/js%E5%AF%B9%E8%B1%A1/">
+<meta property="og:site_name" content="葛飞的博客">
+<meta property="og:description" content="js对象基础">
+<meta name="twitter:description" content="js对象基础">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-10-08T16:38:19">
+  
+  
+    <meta property="article:modified_time" content="2019-10-08T16:38:19">
+  
+  
+  
+    
+      <meta property="article:section" content="category">
+    
+      <meta property="article:section" content="subcategory">
+    
+  
+  
+    
+      <meta property="article:tag" content="javascript">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/2f7c05864e0be8750bb57a1449bc059d?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/2f7c05864e0be8750bb57a1449bc059d?s=640">
+
+
+    <title>Js对象</title>
+
+    <link rel="icon" href="https://gefei-someone.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://gefei-someone.github.io/2019/10/js%E5%AF%B9%E8%B1%A1/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://gefei-someone.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://gefei-someone.github.io/">葛飞的博客</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://gefei-someone.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/2f7c05864e0be8750bb57a1449bc059d?s=90" alt="作者的图片" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://gefei-someone.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/2f7c05864e0be8750bb57a1449bc059d?s=110" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">葛飞</h4>
+        
+          <h5 class="sidebar-profile-bio">小程序员一枚</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://gefei-someone.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://gefei-someone.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/GeFei-someone" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://gefei-someone.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Js对象
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-10-08T16:38:19&#43;08:00">
+        
+  十月 8, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://gefei-someone.github.io/categories/category">category</a>, 
+    
+      <a class="category-link" href="https://gefei-someone.github.io/categories/subcategory">subcategory</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>js对象基础</p>
+
+<h3 id="定义">定义</h3>
+
+<ol>
+<li>无序的数据集合</li>
+<li>键值对的集合
+<br /></li>
+</ol>
+
+<h3 id="js对象声明">js对象声明</h3>
+
+<pre><code>let obj = {'name': 'gefei','age': 23}
+let obj = new Object({'name': 'gefei','age': 23})
+console.log({'name': 'gefei','age': 23})
+</code></pre>
+
+<h3 id="细节">细节</h3>
+
+<ul>
+<li>键名是字符串，不是标识符，可以包含任何字符</li>
+<li>引号可以省略，省略之后就只能写标识符</li>
+<li>就算引号省略了，键名也是字符串，（没有数字下标，都是字符串）</li>
+</ul>
+
+<h3 id="一些奇怪的属性名">一些奇怪的属性名</h3>
+
+<pre><code>let obj = {
+    1: &quot;a&quot;,
+    3.2: 'b',
+    1e2: true,
+    1e-2: true,
+    .234: true,
+    0xFF: true
+};
+// 1e2 会变成100,js会自动计算，想要1e2作为属性名 可以使用‘1e2’,就不会自动计算
+</code></pre>
+
+<h4 id="小技巧">小技巧</h4>
+
+<p>如果想要变量作为属性名</p>
+
+<pre><code>let a = &quot;xxx&quot;;
+let obj = {
+    [a]: 111
+}
+演示：
+{
+    xxx: 111
+}
+</code></pre>
+
+<h4 id="对象的隐藏属性">对象的隐藏属性</h4>
+
+<p>js中每一个对象都有一个隐藏属性</p>
+
+<p>这个隐藏属性存储着其共有<font color=red>属性组成的对象</font></p>
+
+<p>这个<font color=red>共有属性组成的对象</font>叫做原型</p>
+
+<p>隐藏属性叫做<code>__proto__</code></p>
+
+<h2 id="object的一些方法">Object的一些方法</h2>
+
+<h4 id="删属性">删属性</h4>
+
+<pre><code>delete obj.name 或 delete obj['name']  //删除值和名
+</code></pre>
+
+<p>检测是否删除了对象的属性</p>
+
+<pre><code>'name' in obj   // obj里是否有name属性  true/false	
+</code></pre>
+
+<h4 id="读属性">读属性</h4>
+
+<pre><code>Object.keys(obj) // 查看对象的所有键名
+Object.values(obj) // 查看对象的所有值
+Object.entries(obj) // 查看所有属性和值
+obj.__proto__  //查看自身所有的隐藏属性
+obj.hasOwnPrototype('toString') // 判断一个属性是否是自身属性
+obj['key'] // 中括号语法
+obj.key // 点语法
+
+</code></pre>
+
+<h4 id="修改属性或值">修改属性或值</h4>
+
+<pre><code>// 一
+let obj = {name: 'gefei'}
+obj.name = 'bjll'
+obj['name'] = 'abc'
+
+Object.assign(obj,{age: 18,gender: 'man'}) //es6 新出
+</code></pre>
+
+<p>注意： 无法通过自身修改或增加共有属性</p>
+
+<pre><code>let obj = {}, obj2 = {} // 共有属性 toString
+obj.toString = 'xxx' //只会在改obj自身属性
+console.log(obj.toString)
+// obj2.toString还是在原型上
+</code></pre>
+
+<p>修改或者增加原型上的属性</p>
+
+<pre><code>// 一
+obj.__proto__.toString = &quot;xxx&quot;; // 不推荐使用__proto__
+// 二
+obj.prototype.toString = &quot;xxx&quot;;
+// 三
+let common= {'name': '葛飞','age': 23}
+let obj = Object.create(common)
+obj.name = 'abc'
+//这样的写法会生成原型链， create只是修改原型，注意最好不要修改原型，会出问题,推荐使用第三种 es6新出
+
+</code></pre>
+
+<h3 id="in-和-hasownprototype的区别">in 和 hasOwnPrototype的区别</h3>
+
+<pre><code>'toString' in obj // true 检测自身属性和原型是否拥有此属性 true/false
+obj.hasOwnProperty(&quot;toString&quot;) // false 检测属性是否是自身的，不会检测到原型
+</code></pre>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://gefei-someone.github.io/tags/javascript/">javascript</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://gefei-someone.github.io/2019/10/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" data-tooltip="JS函数的执行时机">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://gefei-someone.github.io/2019/09/js%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" data-tooltip="Js基本语法">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://gefei-someone.github.io/2019/10/js%E5%AF%B9%E8%B1%A1/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://gefei-someone.github.io/2019/10/js%E5%AF%B9%E8%B1%A1/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://gefei-someone.github.io/2019/10/js%E5%AF%B9%E8%B1%A1/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2019 葛飞. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://gefei-someone.github.io/2019/10/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" data-tooltip="JS函数的执行时机">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://gefei-someone.github.io/2019/09/js%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" data-tooltip="Js基本语法">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://gefei-someone.github.io/2019/10/js%E5%AF%B9%E8%B1%A1/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://gefei-someone.github.io/2019/10/js%E5%AF%B9%E8%B1%A1/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://gefei-someone.github.io/2019/10/js%E5%AF%B9%E8%B1%A1/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgefei-someone.github.io%2F2019%2F10%2Fjs%25E5%25AF%25B9%25E8%25B1%25A1%2F">
+          <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fgefei-someone.github.io%2F2019%2F10%2Fjs%25E5%25AF%25B9%25E8%25B1%25A1%2F">
+          <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fgefei-someone.github.io%2F2019%2F10%2Fjs%25E5%25AF%25B9%25E8%25B1%25A1%2F">
+          <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/2f7c05864e0be8750bb57a1449bc059d?s=110" alt="作者的图片" />
+    
+    <h4 id="about-card-name">葛飞</h4>
+    
+      <div id="about-card-bio">小程序员一枚</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        前端开发工程师
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        北京
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://gefei-someone.github.io/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://gefei-someone.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/gefei-someone.github.io\/2019\/10\/js%E5%AF%B9%E8%B1%A1\/';
+          
+            this.page.identifier = '\/2019\/10\/js%E5%AF%B9%E8%B1%A1\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

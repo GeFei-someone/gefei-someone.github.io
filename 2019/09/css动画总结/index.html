@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.57.1 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="葛飞">
+<meta name="keywords" content="tech">
+<meta name="description" content="最近在学习css动画和浏览器的渲染机制，有兴趣的小伙伴可以一起">
+
+
+<meta property="og:description" content="最近在学习css动画和浏览器的渲染机制，有兴趣的小伙伴可以一起">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Css动画总结">
+<meta name="twitter:title" content="Css动画总结">
+<meta property="og:url" content="https://gefei-someone.github.io/2019/09/css%E5%8A%A8%E7%94%BB%E6%80%BB%E7%BB%93/">
+<meta property="twitter:url" content="https://gefei-someone.github.io/2019/09/css%E5%8A%A8%E7%94%BB%E6%80%BB%E7%BB%93/">
+<meta property="og:site_name" content="葛飞的博客">
+<meta property="og:description" content="最近在学习css动画和浏览器的渲染机制，有兴趣的小伙伴可以一起">
+<meta name="twitter:description" content="最近在学习css动画和浏览器的渲染机制，有兴趣的小伙伴可以一起">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-09-10T17:09:19">
+  
+  
+    <meta property="article:modified_time" content="2019-09-10T17:09:19">
+  
+  
+  
+    
+      <meta property="article:section" content="css">
+    
+      <meta property="article:section" content="浏览器">
+    
+  
+  
+    
+      <meta property="article:tag" content="css">
+    
+      <meta property="article:tag" content="浏览器">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/2f7c05864e0be8750bb57a1449bc059d?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/2f7c05864e0be8750bb57a1449bc059d?s=640">
+
+
+    <title>Css动画总结</title>
+
+    <link rel="icon" href="https://gefei-someone.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://gefei-someone.github.io/2019/09/css%E5%8A%A8%E7%94%BB%E6%80%BB%E7%BB%93/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://gefei-someone.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://gefei-someone.github.io/">葛飞的博客</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://gefei-someone.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/2f7c05864e0be8750bb57a1449bc059d?s=90" alt="作者的图片" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://gefei-someone.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/2f7c05864e0be8750bb57a1449bc059d?s=110" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">葛飞</h4>
+        
+          <h5 class="sidebar-profile-bio">小程序员一枚</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://gefei-someone.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://gefei-someone.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/GeFei-someone" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://gefei-someone.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Css动画总结
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-09-10T17:09:19&#43;08:00">
+        
+  九月 10, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://gefei-someone.github.io/categories/css">css</a>, 
+    
+      <a class="category-link" href="https://gefei-someone.github.io/categories/%e6%b5%8f%e8%a7%88%e5%99%a8">浏览器</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>最近在学习css动画和浏览器的渲染机制，有兴趣的小伙伴可以一起</p>
+
+<h2 id="动画的原理">动画的原理</h2>
+
+<blockquote>
+<p>定义</p>
+</blockquote>
+
+<p>由许多静止的画面（帧），以一定的速度（如每秒30张）连续播放时，肉眼因视觉残像产生错觉，而误认为是活动的画面</p>
+
+<blockquote>
+<p>概念</p>
+</blockquote>
+
+<p>帧：每个静止的画面叫做帧</p>
+
+<p>播放速度：每秒24帧（影视）或者每秒30帧（游戏）</p>
+
+<h2 id="浏览器渲染原理">浏览器渲染原理</h2>
+
+<p>步骤：</p>
+
+<ul>
+<li>根据HTML构建HTML树（DOM）</li>
+<li>根据CSS构建CSS树（CSSOM）</li>
+<li>将两棵树合并成一颗渲染树（render tree）</li>
+<li>Layout布局（文档流、盒模型、计算大小和位置）</li>
+<li>Paint绘制（把边框颜色、文字颜色、阴影等画出来）</li>
+<li>Compose合成（根据层叠关系展示画面）</li>
+</ul>
+
+<p><img src="https://i.loli.net/2019/09/10/YSEZioKhAzIGqbT.png" alt="" /></p>
+
+<p>查看例子之前 先开启浏览器性能检测</p>
+
+<p><font color=red>在开发者工具，任何一个tab页  按Esc、点console左边的三个点，选择Rendering，点Paint flashing，页面的绿色就是重新渲染的</font></p>
+
+<p>更新DOM有三种方式，看下图</p>
+
+<p><img src="https://i.loli.net/2019/09/10/eQo81IMX5r6z9PB.png" alt="" /></p>
+
+<blockquote>
+<p>例1：</p>
+</blockquote>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+  &lt;style&gt;
+    #demo{
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+        transition: all 1s linear;
+    }
+
+    #demo.end{
+        transform: translateX(300px);
+    }
+    .other{
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div class=&quot;wrapper&quot;&gt;
+    &lt;div id=&quot;demo&quot;&gt;&lt;/div&gt;
+    &lt;div class=other&gt;1&lt;/div&gt;
+    &lt;div class=other&gt;2&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+    &lt;script&gt;
+        setTimeout(()=&gt;{
+            demo.remove()
+        },3000)
+    &lt;/script&gt;
+&lt;/html&gt;
+
+</code></pre>
+
+<p><img src="https://i.loli.net/2019/09/10/SmzhEwGLCW2cI4s.png" alt="" /></p>
+
+<p>remove时，会走<font color=red>第一种</font>更新方式。</p>
+
+<blockquote>
+<p>例2：</p>
+</blockquote>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+  &lt;style&gt;
+    #demo{
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+        transition: all 1s linear;
+    }
+
+    #demo.end{
+        transform: translateX(300px);
+    }
+    .other{
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div class=&quot;wrapper&quot;&gt;
+    &lt;div id=&quot;demo&quot;&gt;&lt;/div&gt;
+    &lt;div class=other&gt;1&lt;/div&gt;
+    &lt;div class=other&gt;2&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+ &lt;script&gt;
+    setTimeout(()=&gt;{
+        demo.style.background = 'red'
+    },3000)
+
+ &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p><img src="https://i.loli.net/2019/09/10/javTgwykRsEMdfb.png" alt="" /></p>
+
+<p>改变样式时，因为没有重新布局的地方，所有走的是<font color=red>第二种</font>更新方式</p>
+
+<blockquote>
+<p>例3</p>
+</blockquote>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+  &lt;style&gt;
+    #demo{
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+        transition: all 1s linear;
+    }
+
+    #demo.end{
+        transform: translateX(300px);
+    }
+    .other{
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div class=&quot;wrapper&quot;&gt;
+    &lt;div id=&quot;demo&quot;&gt;&lt;/div&gt;
+    &lt;div class=other&gt;1&lt;/div&gt;
+    &lt;div class=other&gt;2&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+
+<p>开始渲染</p>
+
+<p><img src="https://i.loli.net/2019/09/10/uAIoLGf7n4UiQNk.png" alt="" /></p>
+
+<p>结束渲染</p>
+
+<p><img src="https://i.loli.net/2019/09/10/7raIWHcz9lNvw1u.png" alt="" /></p>
+
+<p>可以看出 <code>translateX</code> 只会在渲染开始前和渲染结束,在过程中是不会在渲染的,所以这时候 就知道那个<code>性能</code>好了吧？</p>
+
+<p>建议： 做动画最好用transform和animation配合使用，这样性能会很好</p>
+
+<p>每一个属性都有渲染过程</p>
+
+<p>需要的时候可在 <code>https://csstriggers.com/</code>这个里查看</p>
+
+<h2 id="transform-属性">transform 属性</h2>
+
+<p>四个常用功能：</p>
+
+<ul>
+<li><p>位移：translate</p></li>
+
+<li><p>缩放：scale</p></li>
+
+<li><p>旋转：rotate</p></li>
+
+<li><p>倾斜：skew</p></li>
+</ul>
+
+<h3 id="translate">translate</h3>
+
+<p>语法：</p>
+
+<p>translateX(30px)    X轴</p>
+
+<p><img src="https://i.loli.net/2019/09/11/josVGRFEZO8qBmX.gif" alt="" /></p>
+
+<p>translateY(30px)    Y轴</p>
+
+<p><img src="https://i.loli.net/2019/09/11/muvTwS5QpHNoJ9F.gif" alt="" /></p>
+
+<p>translate(30px,40px)  X轴,Y轴</p>
+
+<p><img src="https://i.loli.net/2019/09/11/1aqtHnXPU8cGusD.gif" alt="" /></p>
+
+<p>translateZ(30px) 且父容器必须有perspective属性，（可自行MDN查看）</p>
+
+<p><img src="https://i.loli.net/2019/09/11/RWXt9flEcrCYVnm.gif" alt="" /></p>
+
+<p>translate3d(x,y,z)</p>
+
+<p>tranlate(-50%,-50%)可做绝对定位元素居中</p>
+
+<p>可以是数字，也可以使用百分数，50%：往右偏自身宽度的50%</p>
+
+<p>perspective(1000) 视点是1000px 中心点</p>
+
+<p>具体可查看 MDN文档</p>
+
+<pre><code>// 居中
+#div {
+    //不支持IE
+    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+</code></pre>
+
+<h3 id="scale">scale</h3>
+
+<p>scale（1.5） 变大到原来的1.5倍</p>
+
+<p>scaleX（1.5） 变宽的1.5倍</p>
+
+<p>scakeY(1.5,0.5)  X变宽，Y变低</p>
+
+<p><img src="https://i.loli.net/2019/09/11/fBdvRnYwWoguJEs.gif" alt="" /></p>
+
+<p>不经常使用，容易出现模糊，看上方图，边框是出现模糊的情况</p>
+
+<h3 id="rotate">rotate</h3>
+
+<p>rotate(45deg) 旋转45度</p>
+
+<p>rotateX(45deg) 在X轴旋转45deg</p>
+
+<p>rotateY(45deg) 在Y轴旋转45deg</p>
+
+<p>rotateZ(45deg) 在Z轴旋转45deg</p>
+
+<p>rotate3d(45deg)</p>
+
+<p><img src="https://i.loli.net/2019/09/11/bODZENhauBSeXrJ.gif" alt="" /></p>
+
+<h3 id="skew">skew</h3>
+
+<p>skewX(15deg) 在X轴倾斜15deg</p>
+
+<p>skewY(15deg) 在Y轴倾斜15deg</p>
+
+<p>skew(15deg,15deg) 在X轴倾斜15deg,在Y轴倾斜15deg</p>
+
+<p><img src="https://i.loli.net/2019/09/11/MNLWbTzH9fYyIm4.gif" alt="" /></p>
+
+<p>推荐配合着 <code>transition</code>属性一起使用，这样可以做成动画，<code>transiton</code>属性看下面</p>
+
+<p><img src="https://i.loli.net/2019/09/11/DGc9YpjXgk1Ifbv.gif" alt="" /></p>
+
+<h2 id="transtion">transtion</h2>
+
+<blockquote>
+<p>作用</p>
+</blockquote>
+
+<p>补充中间帧（只要给他一开始什么样子，结束什么样子。自动补全中间帧）</p>
+
+<blockquote>
+<p>语法</p>
+</blockquote>
+
+<p>transition: 属性名 时长 过渡方式 延迟</p>
+
+<pre><code>transition: left 1s linear
+</code></pre>
+
+<p>可以使用逗号分隔两个不同属性</p>
+
+<pre><code>transition: left 1s,top 2ms
+</code></pre>
+
+<p>可以使用all代表所有属性</p>
+
+<pre><code>transition: all 200ms
+</code></pre>
+
+<p>过渡方式有：linerar | ease | ease-in | ease-out | ease-in-out | cubic-bezier | step-start | step-end | steps</p>
+
+<p><font color=red>注意： 不是所有属性都可以过渡</font></p>
+
+<p>display: none =&gt; block 没法过渡,
+一般改成visibilitiy: hidden =&gt; visible</p>
+
+<p>js监听过渡完成</p>
+
+<pre><code>div.addEventListener('transitionend',() =&gt; {
+    console.log(&quot;完成&quot;)
+})
+</code></pre>
+
+<h2 id="animation">animation</h2>
+
+<blockquote>
+<p>语法</p>
+</blockquote>
+
+<p>animation: 时长 | 过渡方式 | 延迟 | 次数 | 方式 | 填充模式 | 是否暂停 | 动画名</p>
+
+<pre><code>时长：1s 或者1000ms
+
+过渡方式：跟transition取值一样
+
+次数：3或者2.4或者 infinite
+
+方向：reverse | alternate | altenate-reverse
+
+reverse 反过来
+
+alternate 交替 
+
+altenate-reverse 交替反过来
+
+填充模式：none | forwards | backwards | both   //forwards 结束不动
+
+是否暂停：paused | running
+
+paused 暂停
+
+running 继续
+</code></pre>
+
+<h3 id="keyframes-语法">keyframes 语法</h3>
+
+<p>搜索 <code>keyframes MDN</code> 讲的更清楚</p>
+
+<p>百分数的写法</p>
+
+<pre><code>@keyframes xxx {  // 声名关键帧
+    0% {
+        transform: none;
+    }
+    66% {
+        transform: translateX(200px);
+    }
+    100% {
+        transform: translateX(200px) translateY(300px)
+    }
+}
+</code></pre>
+
+<p>form / to 写法</p>
+
+<pre><code>@keyframes xxx {
+    form {  // 开始
+        transform: translateX(0%);
+    }
+    to {   // 结束
+        transform: translateX(100%);
+    }
+}
+</code></pre>
+
+<p>看例子了  <code>http://js.jirengu.com/jilaxenero/edit?html,css,output</code> 会动的心</p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://gefei-someone.github.io/tags/css/">css</a>
+
+  <a class="tag tag--primary tag--small" href="https://gefei-someone.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/">浏览器</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://gefei-someone.github.io/2019/09/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/" data-tooltip="JavaScript的诞生">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://gefei-someone.github.io/2019/09/%E6%B5%85%E6%9E%90url/" data-tooltip="浅析URL">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://gefei-someone.github.io/2019/09/css%E5%8A%A8%E7%94%BB%E6%80%BB%E7%BB%93/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://gefei-someone.github.io/2019/09/css%E5%8A%A8%E7%94%BB%E6%80%BB%E7%BB%93/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://gefei-someone.github.io/2019/09/css%E5%8A%A8%E7%94%BB%E6%80%BB%E7%BB%93/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2019 葛飞. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://gefei-someone.github.io/2019/09/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/" data-tooltip="JavaScript的诞生">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://gefei-someone.github.io/2019/09/%E6%B5%85%E6%9E%90url/" data-tooltip="浅析URL">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://gefei-someone.github.io/2019/09/css%E5%8A%A8%E7%94%BB%E6%80%BB%E7%BB%93/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://gefei-someone.github.io/2019/09/css%E5%8A%A8%E7%94%BB%E6%80%BB%E7%BB%93/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://gefei-someone.github.io/2019/09/css%E5%8A%A8%E7%94%BB%E6%80%BB%E7%BB%93/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgefei-someone.github.io%2F2019%2F09%2Fcss%25E5%258A%25A8%25E7%2594%25BB%25E6%2580%25BB%25E7%25BB%2593%2F">
+          <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fgefei-someone.github.io%2F2019%2F09%2Fcss%25E5%258A%25A8%25E7%2594%25BB%25E6%2580%25BB%25E7%25BB%2593%2F">
+          <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fgefei-someone.github.io%2F2019%2F09%2Fcss%25E5%258A%25A8%25E7%2594%25BB%25E6%2580%25BB%25E7%25BB%2593%2F">
+          <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/2f7c05864e0be8750bb57a1449bc059d?s=110" alt="作者的图片" />
+    
+    <h4 id="about-card-name">葛飞</h4>
+    
+      <div id="about-card-bio">小程序员一枚</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        前端开发工程师
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        北京
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://gefei-someone.github.io/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://gefei-someone.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/gefei-someone.github.io\/2019\/09\/css%E5%8A%A8%E7%94%BB%E6%80%BB%E7%BB%93\/';
+          
+            this.page.identifier = '\/2019\/09\/css%E5%8A%A8%E7%94%BB%E6%80%BB%E7%BB%93\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

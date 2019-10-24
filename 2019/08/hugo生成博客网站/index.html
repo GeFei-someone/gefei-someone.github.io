@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.57.1 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="葛飞">
+<meta name="keywords" content="tech">
+<meta name="description" content="hugo从0到1生成博客教程">
+
+
+<meta property="og:description" content="hugo从0到1生成博客教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hugo生成博客网站">
+<meta name="twitter:title" content="Hugo生成博客网站">
+<meta property="og:url" content="https://gefei-someone.github.io/2019/08/hugo%E7%94%9F%E6%88%90%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/">
+<meta property="twitter:url" content="https://gefei-someone.github.io/2019/08/hugo%E7%94%9F%E6%88%90%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/">
+<meta property="og:site_name" content="葛飞的博客">
+<meta property="og:description" content="hugo从0到1生成博客教程">
+<meta name="twitter:description" content="hugo从0到1生成博客教程">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-08-19T22:03:20">
+  
+  
+    <meta property="article:modified_time" content="2019-08-19T22:03:20">
+  
+  
+  
+    
+      <meta property="article:section" content="git">
+    
+      <meta property="article:section" content="Hugo">
+    
+      <meta property="article:section" content="gitHub">
+    
+  
+  
+    
+      <meta property="article:tag" content="git">
+    
+      <meta property="article:tag" content="Hugo">
+    
+      <meta property="article:tag" content="github">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/2f7c05864e0be8750bb57a1449bc059d?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/2f7c05864e0be8750bb57a1449bc059d?s=640">
+
+
+    <title>Hugo生成博客网站</title>
+
+    <link rel="icon" href="https://gefei-someone.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://gefei-someone.github.io/2019/08/hugo%E7%94%9F%E6%88%90%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://gefei-someone.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://gefei-someone.github.io/">葛飞的博客</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://gefei-someone.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/2f7c05864e0be8750bb57a1449bc059d?s=90" alt="作者的图片" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://gefei-someone.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/2f7c05864e0be8750bb57a1449bc059d?s=110" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">葛飞</h4>
+        
+          <h5 class="sidebar-profile-bio">小程序员一枚</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://gefei-someone.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://gefei-someone.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/GeFei-someone" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://gefei-someone.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Hugo生成博客网站
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-08-19T22:03:20&#43;08:00">
+        
+  八月 19, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://gefei-someone.github.io/categories/git">git</a>, 
+    
+      <a class="category-link" href="https://gefei-someone.github.io/categories/hugo">Hugo</a>, 
+    
+      <a class="category-link" href="https://gefei-someone.github.io/categories/github">gitHub</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>hugo从0到1生成博客教程</p>
+
+<blockquote>
+<p>前言</p>
+</blockquote>
+
+<p>最近学习了hugo生成博客，把我遇到的一些坑、和遇到点小问题记录一下，如果你是刚刚了解到hugo，那么看我这个网站怎么样？这就是hugo生成的。</p>
+
+<blockquote>
+<p>开始操作</p>
+</blockquote>
+
+<p>目录</p>
+
+<ol>
+<li>下载安装hugo</li>
+<li>按照hugo官网设置基本操作</li>
+<li>更换主题</li>
+<li>部署github，生成免费博客网站</li>
+</ol>
+
+<h2 id="一-下载安装hugo">一、下载安装hugo</h2>
+
+<p>Mac安装方式</p>
+
+<ul>
+<li>brew install hugo</li>
+<li>hugo version  查看hugo版本</li>
+</ul>
+
+<p>Window安装方式</p>
+
+<ul>
+<li>去<a href="https://github.com/gohugoio/hugo/releases">Hugo releases 页面</a>下载hugo_xxx_Windows-64bit.zip</li>
+</ul>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/1.png" alt="" /></p>
+
+<ul>
+<li>解压，找个目录解压出hugo.exe</li>
+</ul>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/2.png" alt="" /></p>
+
+<ul>
+<li>将路径写进系统变量里(path)
+<br /></li>
+</ul>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/3.png" alt="" /></p>
+
+<ul>
+<li>启动控制台 输入 hugo version</li>
+</ul>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/4.png" alt="" /></p>
+
+<h2 id="二-按照hugo官网设置基本操作">二、按照hugo官网设置基本操作</h2>
+
+<p>进入<a href="https://gohugo.io/">Hugo 官网</a>,点击 <font color=red >Qick Start </font>开始
+从Step2开始抄代码</p>
+
+<blockquote>
+<p>Step2:</p>
+</blockquote>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/5.png" alt="" /></p>
+
+<p>生成博客的目录</p>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/9.png" alt="" /></p>
+
+<p>config.toml配置文件介绍</p>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/10.png" alt="" /></p>
+
+<blockquote>
+<p>Step3:</p>
+</blockquote>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/6.jpg" alt="" /></p>
+
+<blockquote>
+<p>Step4:</p>
+</blockquote>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/7.png" alt="" /></p>
+
+<p>生成的博客位置</p>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/8.png" alt="" /></p>
+
+<p>博客内容</p>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/11.png" alt="" /></p>
+
+<blockquote>
+<p>Step5:</p>
+</blockquote>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/13.png" alt="" /></p>
+
+<p><font color=red >注：开了server 就不要关了，关了就访问不了，需要重新开启</font></p>
+
+<p>开起后是这样的</p>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/14.png" alt="" /></p>
+
+<p>改一下配置文件(config.toml)</p>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/15.png" alt="" /></p>
+
+<p>保存后浏览器会自动刷新</p>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/16.png" alt="" /></p>
+
+<blockquote>
+<p>插入图片</p>
+</blockquote>
+
+<p>在根目录<code>static</code>目录里放图片</p>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/36.png" alt="" /></p>
+
+<h2 id="三-更换主题">三、更换主题</h2>
+
+<p>进这个网站里</p>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/17.png" alt="" /></p>
+
+<p>我选择这个主题</p>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/18.png" alt="" /></p>
+
+<p>点这个</p>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/19.png" alt="" /></p>
+
+<p>后面的themes/jane 是克隆在themes下jane文件夹</p>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/20.png" alt="" /></p>
+
+<p>注意：在vscode里重新开一个终端，不要关闭之前的</p>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/21.png" alt="" /></p>
+
+<p>开始换主题了。。。</p>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/22.png" alt="" /></p>
+
+<p>主题换成功了，但是这里有一点问题 注意</p>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/23.png" alt="" /></p>
+
+<p>需要运行这两句，因为content -&gt; props 而主题里的content-&gt;post需要替换一下,config.toml也一样 默认的配置文件已经支持不了主题的了，需要复制出来</p>
+
+<pre><code class="language-javascript"> cp -r themes/jane/exampleSite/content ./
+</code></pre>
+
+<pre><code class="language-javascript"> cp themes/jane/exampleSite/config.toml ./
+</code></pre>
+
+<p><font color=red size=3>使用这两句命令可以，也可以自己手动替换</font></p>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/26.png" alt="" /></p>
+
+<p>这样就可以了，配置文件里需要改几个地方</p>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/27.png" alt="" /></p>
+
+<p><font color=red size=3>注：每个主题的配置文件都是不一样的，可以看他的主题文档</font></p>
+
+<p>换完以后运行 <code>hugo</code>，会生成public目录</p>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/24.png" alt="" /></p>
+
+<h2 id="四-部署github-生成免费博客网站">四、部署github，生成免费博客网站</h2>
+
+<p>根目录创建 .gitignore 文件。 public是不提交的，public目录是需要单独提交的，public才是最后的网站</p>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/28.png" alt="" /></p>
+
+<p>进入public，如果还不会git提交远程仓库可以看我另一个文章，<a href="https://gefei-someone.github.io/2019/08/git基本操作适合新手/">戳我</a></p>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/29.png" alt="" /></p>
+
+<p>创建远程仓库 <code>gefei.github.io</code></p>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/30.png" alt="" /></p>
+
+<p>提交成功后 在github点这个</p>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/31.png" alt="" /></p>
+
+<p>找到gitHub Pages 把Source选择成master branch，如果没有就不用管了，直接点上面的地址</p>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/33.png" alt="" /></p>
+
+<p>放上去后是没有样式的  需要改一下config.toml里的BaseUrl参数</p>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/34.png" alt="" /></p>
+
+<p>然后重新hugo</p>
+
+<p><font class=red >注意：记住一定要在博客根目录hugo，不然会在你当前目录创建public目录<font></p>
+
+<p><img src="https://gefei-someone.github.io/images/blok2/35.png" alt="" /></p>
+
+<p><font size=5 >打完收工</font></p>
+
+<blockquote>
+<p>结尾</p>
+</blockquote>
+
+<p>hugo是需要git的，如果你还不会git可以看我另一篇文章，希望对你有帮助。如果是上传博客源代码注意主题是不会上传的。有问题可以联系我，微信：836456907</p>
+
+<p>hugo的写文章语言是 Markdown 语法</p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://gefei-someone.github.io/tags/git/">git</a>
+
+  <a class="tag tag--primary tag--small" href="https://gefei-someone.github.io/tags/hugo/">Hugo</a>
+
+  <a class="tag tag--primary tag--small" href="https://gefei-someone.github.io/tags/github/">github</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://gefei-someone.github.io/2019/08/%E5%AE%89%E8%A3%85node.js/" data-tooltip="安装node.js">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://gefei-someone.github.io/2019/08/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E9%80%82%E5%90%88%E6%96%B0%E6%89%8B/" data-tooltip="Git基本操作（适合新手）">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://gefei-someone.github.io/2019/08/hugo%E7%94%9F%E6%88%90%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://gefei-someone.github.io/2019/08/hugo%E7%94%9F%E6%88%90%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://gefei-someone.github.io/2019/08/hugo%E7%94%9F%E6%88%90%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2019 葛飞. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://gefei-someone.github.io/2019/08/%E5%AE%89%E8%A3%85node.js/" data-tooltip="安装node.js">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://gefei-someone.github.io/2019/08/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E9%80%82%E5%90%88%E6%96%B0%E6%89%8B/" data-tooltip="Git基本操作（适合新手）">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://gefei-someone.github.io/2019/08/hugo%E7%94%9F%E6%88%90%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://gefei-someone.github.io/2019/08/hugo%E7%94%9F%E6%88%90%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://gefei-someone.github.io/2019/08/hugo%E7%94%9F%E6%88%90%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgefei-someone.github.io%2F2019%2F08%2Fhugo%25E7%2594%259F%25E6%2588%2590%25E5%258D%259A%25E5%25AE%25A2%25E7%25BD%2591%25E7%25AB%2599%2F">
+          <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fgefei-someone.github.io%2F2019%2F08%2Fhugo%25E7%2594%259F%25E6%2588%2590%25E5%258D%259A%25E5%25AE%25A2%25E7%25BD%2591%25E7%25AB%2599%2F">
+          <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fgefei-someone.github.io%2F2019%2F08%2Fhugo%25E7%2594%259F%25E6%2588%2590%25E5%258D%259A%25E5%25AE%25A2%25E7%25BD%2591%25E7%25AB%2599%2F">
+          <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/2f7c05864e0be8750bb57a1449bc059d?s=110" alt="作者的图片" />
+    
+    <h4 id="about-card-name">葛飞</h4>
+    
+      <div id="about-card-bio">小程序员一枚</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        前端开发工程师
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        北京
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://gefei-someone.github.io/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://gefei-someone.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/gefei-someone.github.io\/2019\/08\/hugo%E7%94%9F%E6%88%90%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99\/';
+          
+            this.page.identifier = '\/2019\/08\/hugo%E7%94%9F%E6%88%90%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

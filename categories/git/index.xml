@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on 葛飞的博客</title>
+    <link>https://gefei-someone.github.io/categories/git/</link>
+    <description>Recent content in git on 葛飞的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 19 Aug 2019 22:03:20 +0800</lastBuildDate>
+    
+	<atom:link href="https://gefei-someone.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo生成博客网站</title>
+      <link>https://gefei-someone.github.io/2019/08/hugo%E7%94%9F%E6%88%90%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</link>
+      <pubDate>Mon, 19 Aug 2019 22:03:20 +0800</pubDate>
+      
+      <guid>https://gefei-someone.github.io/2019/08/hugo%E7%94%9F%E6%88%90%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</guid>
+      <description>&lt;p&gt;hugo从0到1生成博客教程&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Git基本操作（适合新手）</title>
+      <link>https://gefei-someone.github.io/2019/08/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E9%80%82%E5%90%88%E6%96%B0%E6%89%8B/</link>
+      <pubDate>Mon, 19 Aug 2019 13:59:30 +0800</pubDate>
+      
+      <guid>https://gefei-someone.github.io/2019/08/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E9%80%82%E5%90%88%E6%96%B0%E6%89%8B/</guid>
+      <description>&lt;p&gt;git新手教程&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
